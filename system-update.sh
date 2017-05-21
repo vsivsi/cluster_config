@@ -46,4 +46,6 @@ sudo softwareupdate --schedule off
 sudo chown admin /usr/local
 sudo chgrp admin /usr/local
 
+git clone https://github.com/vsivsi/cluster_config.git
+
 sudo reboot now
