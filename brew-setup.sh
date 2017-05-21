@@ -31,4 +31,5 @@ chmod 755 /usr/local/bin/webhook
 # This is a custom build of restic
 cp bin/restic /usr/local/bin
 
-
+# This is a custom build of influxdb-relay
+cp bin/influxdb-relay /usr/local/bin
