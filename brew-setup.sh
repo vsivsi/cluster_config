@@ -28,5 +28,7 @@ tar xvf webhook-darwin-amd64.tar.gz
 cp webhook-darwin-amd64/webhook /usr/local/bin
 chmod 755 /usr/local/bin/webhook
 
+# This is a custom build of restic
+cp bin/restic /usr/local/bin
 
 
