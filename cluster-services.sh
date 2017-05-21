@@ -21,12 +21,12 @@ cp config/consul_$NODETYPE.json /usr/local/etc/consul.d
 cp config/nomad_$NODETYPE.hcl /usr/local/etc/nomad.d
 cp jobs/* /usr/local/etc/jobs/
 
-sudo cp consul.plist /Library/LaunchDaemons/com.hashicorp.consul.plist
+sudo cp config/consul.plist /Library/LaunchDaemons/com.hashicorp.consul.plist
 sudo launchctl unload /Library/LaunchDaemons/com.hashicorp.consul.plist
 sudo launchctl load /Library/LaunchDaemons/com.hashicorp.consul.plist
-sudo cp nomad.plist /Library/LaunchDaemons/com.hashicorp.nomad.plist
+sudo cp config/nomad.plist /Library/LaunchDaemons/com.hashicorp.nomad.plist
 sudo launchctl unload /Library/LaunchDaemons/com.hashicorp.nomad.plist
 sudo launchctl load /Library/LaunchDaemons/com.hashicorp.nomad.plist
 sudo mkdir -p /etc/resolver
-sudo cp consul.resolver /etc/resolver/consul
+sudo cp config/consul.resolver /etc/resolver/consul
 

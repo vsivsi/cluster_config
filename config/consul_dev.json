@@ -4,5 +4,6 @@
    "client_addr": "0.0.0.0",
    "bind_addr": "0.0.0.0",
    "bootstrap_expect": 1,
-   "ui": true
+   "ui": true,
+   "disable_remote_exec": false
 }
