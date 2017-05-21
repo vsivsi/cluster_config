@@ -10,8 +10,9 @@ brew install nomad
 
 # Linux:  Pre-installed
 brew install gawk
+brew install wget
 
-# apt-get jq
+# Linux: apt-get jq  
 brew install jq
 
 # For linux: curl -L https://git.io/n-install | bash
@@ -49,6 +50,14 @@ brew install vault
 # Linux: https://caddyserver.com/download/linux/amd64
 # Or: curl https://getcaddy.com | bash
 brew install caddy
+
+# Linux: ???
+brew install consul-backinator
+
+# Linux
+curl -L -O https://github.com/jippi/hashi-ui/releases/download/v0.13.5/hashi-ui-darwin-amd64
+cp hashi-ui-darwin-amd64 /usr/local/bin/hashi-ui
+chmod 755 /usr/local/bin/hashi-ui
 
 # I have no idea how to install R on Linux, but not necessary?
 brew tap homebrew/science
