@@ -3,5 +3,6 @@
    "data_dir": "/usr/local/var/consul",
    "client_addr": "0.0.0.0",
    "bind_addr": "0.0.0.0",
-   "bootstrap_expect": 1
+   "bootstrap_expect": 1,
+   "ui": true
 }

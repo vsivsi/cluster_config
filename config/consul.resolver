@@ -1,0 +1,4 @@
+port 8600
+nameserver 127.0.0.1.8600
+nameserver 127.0.0.1.8600
+nameserver 127.0.0.1.8600
