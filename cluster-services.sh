@@ -6,7 +6,7 @@ mkdir -p /usr/local/etc/nomad.d
 
 mkdir -p /usr/local/etc/jobs
 
-case $1 in
+case $HOSTNAME in
 (mm0)
   NODETYPE="head";;
 (mm?)
