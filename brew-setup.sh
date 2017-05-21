@@ -40,3 +40,9 @@ cp bin/restic /usr/local/bin
 
 # This is a custom build of influxdb-relay
 cp bin/influxdb-relay /usr/local/bin
+
+# Install packages from github masters:
+
+git clone https://github.com/ctberthiaume/time-series-cop
+cd time-series-cop
+npm install -g
