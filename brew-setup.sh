@@ -1,6 +1,10 @@
-
-echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew analytics off
+if which brew
+then
+  brew update
+else
+  echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew analytics off
+fi
 
 # Linux: https://releases.hashicorp.com/consul/0.8.3/consul_0.8.3_linux_amd64.zip
 brew install consul
