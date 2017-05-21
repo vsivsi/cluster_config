@@ -13,6 +13,8 @@ brew install influxdb
 brew install grafana
 brew install telegraf
 brew install terraform
+brew install vault
+brew install caddy
 brew tap homebrew/science
 brew install R
 
@@ -27,6 +29,11 @@ curl -L -O 'https://github.com/adnanh/webhook/releases/download/2.6.3/webhook-da
 tar xvf webhook-darwin-amd64.tar.gz
 cp webhook-darwin-amd64/webhook /usr/local/bin
 chmod 755 /usr/local/bin/webhook
+
+# Linux binary is: https://github.com/containous/traefik/releases/download/v1.2.3/traefik_linux-amd64
+curl -L -O 'https://github.com/containous/traefik/releases/download/v1.2.3/traefik_darwin-amd64'
+cp traefik_darwin-amd64 /usr/local/bin/traefik
+chmod 755 /usr/local/bin/traefik
 
 # This is a custom build of restic
 cp bin/restic /usr/local/bin
