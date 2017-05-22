@@ -11,6 +11,7 @@ client {
   enabled          = true
   network_speed    = 1000
   node_class       = "worker"
+  no_host_uuid     = true
   options {
     "driver.raw_exec.enable" = "1"
   }
