@@ -4,7 +4,7 @@ data_dir  = "/usr/local/var/nomad"
 
 server {
   enabled          = true
-  bootstrap_expect = 1
+  bootstrap_expect = 5
 }
 
 client {
