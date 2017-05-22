@@ -18,5 +18,7 @@ client {
 
 consul {
   address = "127.0.0.1:8500"
+  server_auto_join = true
+  client_auto_join = true
 }
 
