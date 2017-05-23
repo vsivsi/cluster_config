@@ -92,6 +92,11 @@ cp bin/restic /usr/local/bin
 # This is a custom build of influxdb-relay
 cp bin/influxdb-relay /usr/local/bin
 
+# These are self built
+cp bin/udpsend /usr/local/bin
+cp bin/udplisten /usr/local/bin
+
+
 # Install packages from github masters:
 
 # Needed for linux?
