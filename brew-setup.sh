@@ -112,6 +112,10 @@ cp bin/udplisten /usr/local/bin
 # Install packages from github masters:
 
 # Needed for linux?
+if ! [ -e time-series-cop ]
+then
 git clone https://github.com/ctberthiaume/time-series-cop
+fi
 cd time-series-cop
+git pull
 npm install -g
