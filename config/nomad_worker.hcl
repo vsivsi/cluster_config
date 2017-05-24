@@ -3,8 +3,7 @@ bind_addr = "0.0.0.0" # the default
 data_dir  = "/usr/local/var/nomad"
 
 server {
-  enabled          = true
-  bootstrap_expect = 5
+  enabled          = false
 }
 
 client {
@@ -22,4 +21,3 @@ consul {
   server_auto_join = true
   client_auto_join = true
 }
-

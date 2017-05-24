@@ -3,8 +3,7 @@
    "data_dir": "/usr/local/var/consul",
    "client_addr": "0.0.0.0",
    "bind_addr": "0.0.0.0",
-   "bootstrap_expect": 5,
-   "retry_join": ["192.168.101.38","192.168.102.38","192.168.103.38","192.168.104.38"],
+   "bootstrap_expect": 1,
    "ui": true,
    "disable_host_node_id": true,
    "disable_remote_exec": false

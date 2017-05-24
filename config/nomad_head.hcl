@@ -4,7 +4,7 @@ data_dir  = "/usr/local/var/nomad"
 
 server {
   enabled          = true
-  bootstrap_expect = 5
+  bootstrap_expect = 1
 }
 
 client {
@@ -22,4 +22,3 @@ consul {
   server_auto_join = true
   client_auto_join = true
 }
-

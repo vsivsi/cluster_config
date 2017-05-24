@@ -10,7 +10,8 @@ server {
 client {
   enabled       = true
   network_speed = 1000
-  node_class = "dev"
+  node_class    = "dev"
+  no_host_uuid  = true
   options {
     "driver.raw_exec.enable" = "1"
   }
@@ -18,5 +19,6 @@ client {
 
 consul {
   address = "127.0.0.1:8500"
+  server_auto_join = true
+  client_auto_join = true
 }
-
