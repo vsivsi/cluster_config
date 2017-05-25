@@ -51,7 +51,7 @@ resource "consul_key_prefix" "consul_backup_config" {
   path_prefix = "consulbak/"
 
   subkeys = {
-    RESTIC_REPOSITORY     = "s3:http://minio.service.consul:9000/consulbak"
+    RESTIC_REPOSITORY     = "s3:http://minio.service.consul:9000/dbbackups/consul"
     RESTIC_PASSWORD       = "${var.RESTIC_PASSWORD}"
   }
 }
