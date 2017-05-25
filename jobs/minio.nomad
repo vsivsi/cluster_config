@@ -20,6 +20,59 @@ job "minio" {
       mode = "delay"
     }
 
+    task "webhook" {
+      driver = "raw_exec"
+
+      config {
+        command = "/usr/local/bin/webhook"
+        args = ["--port", "9001", "--hooks", "hooks.json"]
+      }
+
+      logs {
+        max_files     = 10
+        max_file_size = 15
+      }
+
+      resources {
+        cpu    = 50 # MHz
+        memory = 32 # MB
+        network {
+          mbits = 10
+          port "webhook" {
+             static = 9001
+          }
+        }
+      }
+
+      service {
+        name = "webhook"
+        tags = ["storage"]
+        port = "webhook"
+        check {
+          name     = "Webhook tcp check"
+          type     = "tcp"
+          interval = "15s"
+          timeout  = "5s"
+        }
+      }
+
+      template {
+        data = <<EOF
+        [
+          {
+            "id": "snapshot",
+            "execute-command": "/usr/local/bin/snapshot_hook.sh",
+            "command-working-directory": ".",
+            "pass-arguments-to-command":
+            [
+              { "source": "entire-payload" },
+              { "source": "payload", "name": "Key" }
+            ]
+          }
+        ]
+EOF
+    }
+
     task "minio" {
       driver = "raw_exec"
 
@@ -27,6 +80,8 @@ job "minio" {
         command = "/usr/local/bin/minio"
         args = ["server", "--address", "${NOMAD_ADDR_s3}", "--config-dir", ".", "http://mm1/usr/local/var/minio/","http://mm2/usr/local/var/minio/","http://mm3/usr/local/var/minio/","http://mm4/usr/local/var/minio/"]
       }
+
+      leader = true
 
       logs {
         max_files     = 10
@@ -58,7 +113,6 @@ job "minio" {
 
       template {
         data          = <<EOF
-
 {
         "version": "18",
         "credential": {
@@ -81,8 +135,8 @@ job "minio" {
 
                 "webhook": {
                         "1": {
-                                "enable": false,
-                                "endpoint": ""
+                                "enable": true,
+                                "endpoint": "http://127.0.0.1:9000/snapshot"
                         }
                 }
         }
@@ -94,10 +148,6 @@ EOF
         change_mode   = "signal"
         change_signal = "SIGUSR1"
       }
-
-      # Controls the timeout between signalling a task it will be killed
-      # and killing the task. If not set a default is used.
-      # kill_timeout = "20s"
     }
   }
 }
