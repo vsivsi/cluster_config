@@ -16,6 +16,10 @@ job "consul_backup" {
 
   group "instance" {
 
+    restart {
+      mode = "fail"
+    }
+
     task "backup" {
       driver = "raw_exec"
       config {
