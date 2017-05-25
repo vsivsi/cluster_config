@@ -9,6 +9,7 @@ variable "MINIO_ACCESS_KEY" {}
 variable "MINIO_SECRET_KEY" {}
 variable "MINIO_HEAD_ACCESS_KEY" {}
 variable "MINIO_HEAD_SECRET_KEY" {}
+variable "RESTIC_PASSWORD" {}
 
 provider "consul" {
   address    = "mm0:8500"
