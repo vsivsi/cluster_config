@@ -71,6 +71,7 @@ job "minio" {
           }
         ]
 EOF
+      }
     }
 
     task "minio" {
