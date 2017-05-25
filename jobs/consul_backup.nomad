@@ -17,7 +17,9 @@ job "consul_backup" {
   group "instance" {
 
     restart {
-      mode = "fail"
+      attempts = 1
+      interval = "168h"
+      mode     = "fail"
     }
 
     task "backup" {
