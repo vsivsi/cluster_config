@@ -19,8 +19,8 @@ job "consul_backup" {
     task "backup" {
       driver = "raw_exec"
       config {
-        command = "envconsul"
-        args = ["-prefix=consulbak","consul_backup.sh"]
+        command = "/usr/local/bin/envconsul"
+        args = ["-prefix=consulbak","/usr/local/bin/consul_backup.sh"]
       }
 
       logs {
