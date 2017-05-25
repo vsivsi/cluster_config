@@ -104,8 +104,30 @@ cp bin/* /usr/local/bin
 # Needed for linux?
 if ! [ -e time-series-cop ]
 then
-git clone https://github.com/ctberthiaume/time-series-cop
+git clone https://github.com/ctberthiaume/time-series-cop.git
 fi
 cd time-series-cop
 git pull
 npm install -g
+
+cd ..
+
+# Install grafana plugins
+
+if ! [ -e armbrustlab-2dscatter-panel ]
+then
+git clone https://github.com/ctberthiaume/armbrustlab-2dscatter-panel.git
+fi
+cd armbrustlab-2dscatter-panel
+git pull
+cd ..
+cp -r armbrustlab-2dscatter-panel /usr/local/var/lib/grafana/plugins
+
+if ! [ -e armbrustlab-cruisetrack-panel]
+then
+git clone https://github.com/ctberthiaume/armbrustlab-cruisetrack-panel.git
+fi
+cd armbrustlab-cruisetrack-panel
+git pull
+cd ..
+cp -r armbrustlab-cruisetrack-panel /usr/local/var/lib/grafana/plugins
