@@ -1,4 +1,4 @@
-job "minio-head" {
+job "influxdb-head" {
 
   datacenters = ["dc1"]
 
