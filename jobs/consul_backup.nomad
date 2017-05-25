@@ -5,7 +5,7 @@ job "consul_backup" {
   type = "batch"
 
   periodic {
-    cron             = "*/1 * * * * *"
+    cron             = "*/5 * * * * *"
     prohibit_overlap = true
   }
 
