@@ -1,2 +1,8 @@
 envsecrets.sh
 terraform.tfstate
+envconsul
+envconsul_0.6.2_darwin_amd64.tgz
+hashi-ui-darwin-amd64
+traefik_darwin-amd64
+webhook-darwin-amd64.tar.gz
+webhook-darwin-amd64/webhook

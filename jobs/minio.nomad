@@ -64,11 +64,10 @@ job "minio" {
         [
           {
             "id": "snapshot",
-            "execute-command": "/usr/local/bin/snapshot_hook.sh",
+            "execute-command": "/usr/local/bin/nomad",
             "command-working-directory": ".",
             "pass-arguments-to-command": [
-              { "source": "entire-payload" },
-              { "source": "payload", "name": "Key" }
+               { "source": "payload", "name": "Key" }
             ],
             "trigger-rule": {
                "match": {
