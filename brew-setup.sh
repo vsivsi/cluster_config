@@ -120,7 +120,7 @@ git clone https://github.com/ctberthiaume/armbrustlab-2dscatter-panel.git
 fi
 cd armbrustlab-2dscatter-panel
 git pull
-rm -r /usr/local/var/lib/grafana/plugins/armbrustlab-2dscatter-panel
+rm -rf /usr/local/var/lib/grafana/plugins/armbrustlab-2dscatter-panel
 cp -r dist /usr/local/var/lib/grafana/plugins/armbrustlab-2dscatter-panel
 cd ..
 
@@ -130,6 +130,6 @@ git clone https://github.com/ctberthiaume/armbrustlab-cruisetrack-panel.git
 fi
 cd armbrustlab-cruisetrack-panel
 git pull
-rm -r /usr/local/var/lib/grafana/plugins/armbrustlab-cruisetrack-panel
+rm -rf /usr/local/var/lib/grafana/plugins/armbrustlab-cruisetrack-panel
 cp -r dist /usr/local/var/lib/grafana/plugins/armbrustlab-cruisetrack-panel
 cd ..
