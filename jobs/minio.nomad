@@ -64,7 +64,7 @@ job "minio" {
         [
           {
             "id": "snapshot",
-            "execute-command": "/usr/local/bin/nomad",
+            "execute-command": "/usr/local/bin/snapshot_hook.sh",
             "command-working-directory": ".",
             "pass-arguments-to-command": [
                { "source": "payload", "name": "Key" }
