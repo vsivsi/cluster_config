@@ -11,7 +11,7 @@ job "tileserver" {
     task "mbtileserver" {
 
       artifact {
-         source = "http://minio.service.consul/assets/templates.zip"
+         source = "http://minio.service.consul:9000/assets/templates.zip"
             destination = "templates/"
           }
 
