@@ -72,6 +72,10 @@ resource "nomad_job" "minio" {
   jobspec = "${file("minio.nomad")}"
 }
 
+resource "nomad_job" "minio" {
+  jobspec = "${file("consul_backup.nomad")}"
+}
+
 # resource "nomad_job" "caddy" {
 #    jobspec = "${file("caddy.nomad")}"
 # }

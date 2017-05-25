@@ -5,7 +5,7 @@ job "consul_backup" {
   type = "batch"
 
   periodic {
-    cron             = "*/5 * * * * *"
+    cron             = "*/1 * * * * *"
     prohibit_overlap = true
   }
 
@@ -20,7 +20,7 @@ job "consul_backup" {
       driver = "raw_exec"
       config {
         command = "envconsul"
-        args = ["consul_backup.sh"]
+        args = ["-prefix=consulbak","consul_backup.sh"]
       }
 
       logs {
