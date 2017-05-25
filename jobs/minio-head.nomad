@@ -34,10 +34,10 @@ job "minio-head" {
       }
 
       resources {
-        cpu    = 500 # 500 MHz
-        memory = 256 # 256MB
+        cpu    = 250
+        memory = 1024
         network {
-          mbits = 10
+          mbits = 100
           port "s3_head" {
              static = 9000
           }
@@ -57,7 +57,11 @@ job "minio-head" {
       }
 
       template {
-        data          = <<EOF
+
+         destination   = "config.json"
+         change_mode   = "signal"
+         change_signal = "SIGUSR1"
+         data          = <<EOF
 
 {
         "version": "18",
@@ -89,10 +93,6 @@ job "minio-head" {
 }
 
 EOF
-
-        destination   = "config.json"
-        change_mode   = "signal"
-        change_signal = "SIGUSR1"
       }
 
       # Controls the timeout between signalling a task it will be killed
