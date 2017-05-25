@@ -96,18 +96,8 @@ cp traefik_darwin-amd64 /usr/local/bin/traefik
 chmod 755 /usr/local/bin/traefik
 fi
 
-# Linux: a linux build will be in bin/linux
-# This is a custom build of restic
-cp bin/restic /usr/local/bin
-
-# Not needed for Linux...
-# This is a custom build of influxdb-relay
-cp bin/influxdb-relay /usr/local/bin
-
-# These are self built
-cp bin/udpsend /usr/local/bin
-cp bin/udplisten /usr/local/bin
-
+# These are scripts and custom binaries stored in the repo
+cp bin/* /usr/local/bin
 
 # Install packages from github masters:
 
