@@ -18,7 +18,7 @@ job "import_snapshot" {
       mode     = "fail"
     }
 
-    task "backup" {
+    task "process_snapshot" {
       driver = "raw_exec"
       config {
         command = "/usr/local/bin/envconsul"
