@@ -1,4 +1,4 @@
 #!/bin/sh
-restic init
-consul-backinator backup
-restic backup .
+/usr/local/bin/restic init
+/usr/local/bin/consul-backinator backup
+/usr/local/bin/restic backup .
