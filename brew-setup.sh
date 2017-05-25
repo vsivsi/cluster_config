@@ -124,7 +124,7 @@ rm -rf /usr/local/var/lib/grafana/plugins/armbrustlab-2dscatter-panel
 cp -r dist /usr/local/var/lib/grafana/plugins/armbrustlab-2dscatter-panel
 cd ..
 
-if ! [ -e armbrustlab-cruisetrack-panel]
+if ! [ -e armbrustlab-cruisetrack-panel ]
 then
 git clone https://github.com/ctberthiaume/armbrustlab-cruisetrack-panel.git
 fi
