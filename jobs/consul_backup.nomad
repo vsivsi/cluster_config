@@ -20,7 +20,7 @@ job "consul_backup" {
       driver = "raw_exec"
       config {
         command = "/usr/local/bin/envconsul"
-        args = ["-prefix=consulbak","-once","/usr/local/bin/consul_backup.sh"]
+        args = ["-prefix=minio/","-prefix=consulbak/","-once","/usr/local/bin/consul_backup.sh"]
       }
 
       logs {
