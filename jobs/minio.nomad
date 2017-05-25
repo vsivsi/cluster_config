@@ -141,7 +141,7 @@ EOF
                 "webhook": {
                         "1": {
                                 "enable": true,
-                                "endpoint": "http://127.0.0.1:9000/snapshot"
+                                "endpoint": "http://127.0.0.1:9000/hooks/snapshot"
                         }
                 }
         }
