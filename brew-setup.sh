@@ -120,8 +120,9 @@ git clone https://github.com/ctberthiaume/armbrustlab-2dscatter-panel.git
 fi
 cd armbrustlab-2dscatter-panel
 git pull
+rm -r /usr/local/var/lib/grafana/plugins/armbrustlab-2dscatter-panel
+cp -r dist /usr/local/var/lib/grafana/plugins/armbrustlab-2dscatter-panel
 cd ..
-cp -r armbrustlab-2dscatter-panel /usr/local/var/lib/grafana/plugins
 
 if ! [ -e armbrustlab-cruisetrack-panel]
 then
@@ -129,5 +130,6 @@ git clone https://github.com/ctberthiaume/armbrustlab-cruisetrack-panel.git
 fi
 cd armbrustlab-cruisetrack-panel
 git pull
+rm -r /usr/local/var/lib/grafana/plugins/armbrustlab-cruisetrack-panel
+cp -r dist /usr/local/var/lib/grafana/plugins/armbrustlab-cruisetrack-panel
 cd ..
-cp -r armbrustlab-cruisetrack-panel /usr/local/var/lib/grafana/plugins
