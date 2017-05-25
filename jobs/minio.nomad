@@ -85,8 +85,6 @@ EOF
         args = ["server", "--address", "${NOMAD_ADDR_s3}", "--config-dir", ".", "http://mm1/usr/local/var/minio/","http://mm2/usr/local/var/minio/","http://mm3/usr/local/var/minio/","http://mm4/usr/local/var/minio/"]
       }
 
-      leader = true
-
       logs {
         max_files     = 10
         max_file_size = 15
