@@ -57,6 +57,9 @@ job "minio" {
       }
 
       template {
+        destination   = "hooks.json"
+        change_mode   = "signal"
+        change_signal = "SIGUSR1"
         data = <<EOF
         [
           {
@@ -113,6 +116,9 @@ EOF
       }
 
       template {
+        destination   = "config.json"
+        change_mode   = "signal"
+        change_signal = "SIGUSR1"
         data          = <<EOF
 {
         "version": "18",
@@ -142,12 +148,7 @@ EOF
                 }
         }
 }
-
 EOF
-
-        destination   = "config.json"
-        change_mode   = "signal"
-        change_signal = "SIGUSR1"
       }
     }
   }
