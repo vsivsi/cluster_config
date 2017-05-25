@@ -66,11 +66,20 @@ job "minio" {
             "id": "snapshot",
             "execute-command": "/usr/local/bin/snapshot_hook.sh",
             "command-working-directory": ".",
-            "pass-arguments-to-command":
-            [
+            "pass-arguments-to-command": [
               { "source": "entire-payload" },
               { "source": "payload", "name": "Key" }
-            ]
+            ],
+            "trigger-rule": {
+               "match": {
+                  "type": "regex",
+                  "regex": "/snapshots/",
+                  "parameter": {
+                     "source": "payload",
+                     "name": "Key"
+                   }
+               }
+            }
           }
         ]
 EOF
