@@ -12,8 +12,8 @@ job "tileserver" {
 
       artifact {
          source = "http://minio.service.consul:9000/assets/templates.zip"
-            destination = "templates/"
-          }
+         destination = "."
+      }
 
       driver = "raw_exec"
       config {
