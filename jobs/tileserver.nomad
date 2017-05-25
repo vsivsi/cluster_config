@@ -15,10 +15,15 @@ job "tileserver" {
          destination = "."
       }
 
+      artifact {
+         source = "http://minio.service.consul:9000/assets/ocean.mbtiles"
+         destination = "tiles/"
+      }
+
       driver = "raw_exec"
       config {
         command = "/usr/local/bin/mbtileserver"
-        args = ["-d", "/Users/admin/tiles"]
+        args = ["-d", "tiles/"]
       }
 
       resources {
