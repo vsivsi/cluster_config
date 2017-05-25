@@ -97,7 +97,7 @@ chmod 755 /usr/local/bin/traefik
 fi
 
 # These are scripts and custom binaries stored in the repo
-cp bin/* /usr/local/bin
+cp -r bin/* /usr/local/bin
 
 # Install packages from github masters:
 
