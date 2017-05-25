@@ -88,3 +88,15 @@ resource "nomad_job" "influxdb-head" {
 # resource "nomad_job" "caddy" {
 #    jobspec = "${file("caddy.nomad")}"
 # }
+
+provider "influxdb" {
+  url      = "http://mm0:8086/"
+}
+
+resource "influxdb_database" "data" {
+  name = "data"
+}
+
+resource "influxdb_database" "viz" {
+  name = "viz"
+}
