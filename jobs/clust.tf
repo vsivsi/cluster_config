@@ -10,6 +10,7 @@ variable "MINIO_SECRET_KEY" {}
 variable "MINIO_HEAD_ACCESS_KEY" {}
 variable "MINIO_HEAD_SECRET_KEY" {}
 variable "RESTIC_PASSWORD" {}
+variable "GRAFANA_ADMIN_PASSWORD" {}
 
 provider "consul" {
   address    = "mm0:8500"
@@ -53,6 +54,14 @@ resource "consul_key_prefix" "consul_backup_config" {
   subkeys = {
     RESTIC_REPOSITORY     = "s3:http://minio.service.consul:9000/dbbackups/consul"
     RESTIC_PASSWORD       = "${var.RESTIC_PASSWORD}"
+  }
+}
+
+resource "consul_key_prefix" "grafana_config" {
+  path_prefix = "grafana/"
+
+  subkeys = {
+    ADMIN_PASSWORD = "${var.GRAFANA_ADMIN_PASSWORD}"
   }
 }
 
