@@ -80,6 +80,10 @@ resource "nomad_job" "influxdb-head" {
    jobspec = "${file("influxdb-head.nomad")}"
 }
 
+resource "nomad_job" "grafana" {
+   jobspec = "${file("grafana.nomad")}"
+}
+
 ## Parameterized jobs don't register correctly
 # resource "nomad_job" "import_snapshot" {
 #   jobspec = "${file("import_snapshot.nomad")}"
