@@ -109,7 +109,15 @@ fi
 cd time-series-cop
 git pull
 npm install -g
+cd ..
 
+if ! [ -e data-integration-uploader ]
+then
+git clone https://github.com/ctberthiaume/data-integration-uploader.git
+fi
+cd data-integration-uploader
+git pull
+npm install
 cd ..
 
 # Install grafana plugins
