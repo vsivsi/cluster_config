@@ -123,6 +123,10 @@ resource "nomad_job" "tileserver" {
    jobspec = "${file("tileserver.nomad")}"
 }
 
+resource "nomad_job" "uploadserver" {
+   jobspec = "${file("uploadserver.nomad")}"
+}
+
 ## Parameterized jobs don't register correctly
 # resource "nomad_job" "import_snapshot" {
 #   jobspec = "${file("import_snapshot.nomad")}"
