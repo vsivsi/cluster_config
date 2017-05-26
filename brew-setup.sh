@@ -118,6 +118,7 @@ fi
 cd data-integration-uploader
 git pull
 npm install
+zip -r ../data_uploader.zip *
 cd ..
 
 # Install grafana plugins
