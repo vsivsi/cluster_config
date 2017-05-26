@@ -21,6 +21,10 @@ job "uploadserver" {
         args = ["app.js", "-p", "${NOMAD_PORT_upload}", "-s", "/usr/local/bin/process_upload.sh"]
       }
 
+      env {
+         PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+      }
+
       resources {
         cpu = 50
         memory = 128
