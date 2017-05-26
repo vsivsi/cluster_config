@@ -149,7 +149,7 @@ EOF
                 "webhook": {
                         "1": {
                                 "enable": true,
-                                "endpoint": "http://127.0.0.1:{{ env "NOMAD_PORT_webhook" }}/hooks/snapshot"
+                                "endpoint": "http://127.0.0.1:9001/hooks/snapshot"
                         }
                 }
         }
