@@ -94,6 +94,10 @@ resource "nomad_job" "consul_backup" {
   jobspec = "${file("consul_backup.nomad")}"
 }
 
+resource "nomad_job" "influx_backup" {
+  jobspec = "${file("influx_backup.nomad")}"
+}
+
 resource "nomad_job" "influxdb-head" {
    jobspec = "${file("influxdb-head.nomad")}"
 }
