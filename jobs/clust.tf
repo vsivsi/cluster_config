@@ -83,6 +83,15 @@ resource "consul_key_prefix" "grafana_config" {
   }
 }
 
+resource "consul_key_prefix" "uploads_backup_config" {
+  path_prefix = "uploadbak/"
+
+  subkeys = {
+    RESTIC_REPO_ROOT  = "s3:http://minio.service.consul:9000/uploadbackups/"
+    RESTIC_PASSWORD   = "${var.RESTIC_PASSWORD}"
+  }
+}
+
 provider "nomad" {
   address = "http://mm0:4646"
 }
