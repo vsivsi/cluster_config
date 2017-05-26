@@ -113,7 +113,7 @@ cd ..
 
 if ! [ -e data-integration-uploader ]
 then
-git clone https://github.com/ctberthiaume/data-integration-uploader.git
+git clone https://github.com/vsivsi/data-integration-uploader.git
 fi
 cd data-integration-uploader
 git pull
