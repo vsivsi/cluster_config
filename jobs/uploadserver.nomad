@@ -18,7 +18,12 @@ job "uploadserver" {
       driver = "raw_exec"
       config {
         command = "/usr/local/bin/node"
-        args = ["app.js", "-p", "${NOMAD_PORT_upload}", "-s", "/usr/local/bin/process_upload.sh"]
+        args = [
+          "app.js",
+          "-p", "${NOMAD_PORT_upload}",
+          "-b", "/usr/local/bin/process_upload.sh",
+          "-c", "/usr/local/bin/register_upload.sh"
+        ]
       }
 
       env {
