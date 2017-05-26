@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 /usr/local/bin/restic init
 /usr/local/bin/influxd backup -host influx-head.service.consul:8088 -database data /tmp/data
 /usr/local/bin/restic backup --hostname influx /tmp/data

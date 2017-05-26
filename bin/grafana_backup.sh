@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 FN=grafana.bak
 /usr/local/bin/restic init
 echo ".backup /tmp/$FN" | /usr/bin/sqlite3 /usr/local/var/lib/grafana/grafana.db
