@@ -66,6 +66,15 @@ resource "consul_key_prefix" "influx_backup_config" {
   }
 }
 
+resource "consul_key_prefix" "grafana_backup_config" {
+  path_prefix = "grafanabak/"
+
+  subkeys = {
+    RESTIC_REPOSITORY     = "s3:http://minio.service.consul:9000/dbbackups/grafana"
+    RESTIC_PASSWORD       = "${var.RESTIC_PASSWORD}"
+  }
+}
+
 resource "consul_key_prefix" "grafana_config" {
   path_prefix = "grafana/"
 
@@ -96,6 +105,10 @@ resource "nomad_job" "consul_backup" {
 
 resource "nomad_job" "influx_backup" {
   jobspec = "${file("influx_backup.nomad")}"
+}
+
+resource "nomad_job" "grafana_backup" {
+  jobspec = "${file("grafana_backup.nomad")}"
 }
 
 resource "nomad_job" "influxdb-head" {
