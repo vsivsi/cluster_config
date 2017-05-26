@@ -25,7 +25,7 @@ job "minio" {
 
       config {
         command = "/usr/local/bin/webhook"
-        args = ["--port", "9001", "--hooks", "hooks.json"]
+        args = ["--port", "${NOMAD_PORT_webhook}", "--hooks", "hooks.json"]
       }
 
       logs {
@@ -149,7 +149,7 @@ EOF
                 "webhook": {
                         "1": {
                                 "enable": true,
-                                "endpoint": "http://127.0.0.1:9001/hooks/snapshot"
+                                "endpoint": "http://127.0.0.1:{{ env "NOMAD_PORT_webhook" }}/hooks/snapshot"
                         }
                 }
         }

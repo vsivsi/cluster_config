@@ -12,8 +12,7 @@ job "hashi-ui" {
       driver = "raw_exec"
       config {
         command = "/usr/local/bin/hashi-ui"
-        args = ["--nomad-enable", "--consul-enable", "--listen-address=0.0.0.0:3001"]
-#        args = ["--nomad-enable", "--consul-enable", "--listen-address=0.0.0.0:3001", "--proxy-address", "acgt.ocean.washington.edu/hashi-ui"]
+        args = ["--nomad-enable", "--consul-enable", "--listen-address=0.0.0.0:${NOMAD_PORT_hashi_ui}"]
       }
 
       resources {
@@ -30,7 +29,7 @@ job "hashi-ui" {
       service {
         name = "hashi-ui"
         tags = ["monitoring"]
-        port = "hashi_ui" 
+        port = "hashi_ui"
         check {
           name     = "Hashi-ui tcp check"
           type     = "tcp"
@@ -46,4 +45,3 @@ job "hashi-ui" {
     }
   }
 }
-
