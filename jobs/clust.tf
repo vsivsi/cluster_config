@@ -80,6 +80,8 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "ups/CPWPASS"               = "${var.ADMIN_PASSWORD}"
     "ups/UPSIP"                 = "ups"
     "ups/script"                = "lineprotocol-cyberpower-ups-dataLog"
+    "ups/CRUISE_ID"             = "MGL1704"
+    "ups/MEASUREMENT_ID"        = "ups_status"   
   }
 }
 
