@@ -12,3 +12,5 @@ ls /tmp/${1#*/snapshots/} >> /usr/local/var/log/hook_processed.log
 $(consul kv get ${1%/snapshots/*}/script) -i /tmp/${1#*/snapshots/}/*.tsv -H influx-head.service.consul -d data
 
 $(consul kv get ${1%/snapshots/*}/script) -i /tmp/${1#*/snapshots/}/*.tsv -o /dev/stdout >> /usr/local/var/log/hook_processed.log
+
+rm -r /tmp/${1#*/snapshots/}
