@@ -18,13 +18,13 @@ echo "DATASET: $DATASET  SNAPID: $SNAPID" >> /usr/local/var/log/hook_processed.l
 
 envconsul -prefix minio/ -prefix $DATASET/ restic restore -t /tmp/$SNAPID $SNAPID >> /usr/local/var/log/hook_processed.log
 
-ls /tmp/$DATASET >> /usr/local/var/log/hook_processed.log
+ls /tmp/$SNAPID >> /usr/local/var/log/hook_processed.log
 
 if [ $CRUISE_ID ] && [ $MEASUREMENT_ID ]
 then
    echo "CRUISE_ID: $CRUISE_ID  MEASUREMENT_ID: $MEASUREMENT_ID" >> /usr/local/var/log/hook_processed.log
-   $(consul kv get $DATASET/script) -i /tmp/$SNAPID/*.tsv -H influx-head.service.consul -d data -c $CRUISE_ID -m $MEASUREMENT_ID
-   $(consul kv get $DATASET/script) -i /tmp/$SNAPID/*.tsv -o /dev/stdout -c $CRUISE_ID -m $MEASUREMENT_ID >> /usr/local/var/log/hook_processed.log
+   $(consul kv get $DATASET/script) -i /tmp/$SNAPID/* -H influx-head.service.consul -d data -c $CRUISE_ID -m $MEASUREMENT_ID
+   $(consul kv get $DATASET/script) -i /tmp/$SNAPID/* -o /dev/stdout -c $CRUISE_ID -m $MEASUREMENT_ID >> /usr/local/var/log/hook_processed.log
 else
    echo "CRUISE_ID and MEASUREMENT_ID are in datafile" >> /usr/local/var/log/hook_processed.log
    $(consul kv get $DATASET/script) -i /tmp/$SNAPID/*.tsv -H influx-head.service.consul -d data
