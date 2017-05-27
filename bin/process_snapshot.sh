@@ -10,4 +10,4 @@ ls /tmp/${1#*/snapshots/} >> /usr/local/var/log/hook_processed.log
 
 # /usr/local/bin/$(/usr/local/bin/consul kv get ${1%/snapshots/*}/script) -i `ls /tmp/${1#*/snapshots/}` -H influx-head.service.consul -d data -o /dev/stdout >> /usr/local/var/log/hook_processed.log
 
-/usr/local/bin/$(/usr/local/bin/consul kv get ${1%/snapshots/*}/script) -i `ls /tmp/${1#*/snapshots/}` -o /dev/stdout >> /usr/local/var/log/hook_processed.log
+/usr/local/bin/node /usr/local/bin/$(/usr/local/bin/consul kv get ${1%/snapshots/*}/script) -i `ls /tmp/${1#*/snapshots/}` -o /dev/stdout >> /usr/local/var/log/hook_processed.log
