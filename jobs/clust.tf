@@ -48,7 +48,7 @@ resource "consul_key_prefix" "minio_head_config" {
   }
 }
 
-resource "consul_key_prefix" "backup_configs" {
+resource "consul_key_prefix" "db_backup_configs" {
   path_prefix = "dbbackups/"
 
   subkeys = {
@@ -61,7 +61,7 @@ resource "consul_key_prefix" "backup_configs" {
   }
 }
 
-resource "consul_key_prefix" "backup_configs" {
+resource "consul_key_prefix" "inst_backup_configs" {
   path_prefix = "instbackups/"
 
   subkeys = {
