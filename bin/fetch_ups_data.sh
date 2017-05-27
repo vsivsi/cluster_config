@@ -14,15 +14,15 @@ export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 restic init
 
 # All HTTP headers are dumped, omit "-D -" to suppress
-curl "http://$UPSIP/login_pass.cgi?username=$CPWUSER&password=$CPWPASS&action=LOGIN" 1>&2
-curl -c cookiejar.txt "http://$UPSIP/login_pass.html" 1>&2
-curl -b cookiejar.txt "http://$UPSIP/login_counter.html?stap=1" 1>&2
-curl -b cookiejar.txt "http://$UPSIP/login_counter.html?stap=2" 1>&2
+curl "http://$UPSIP/login_pass.cgi?username=$CPWUSER&password=$CPWPASS&action=LOGIN" > /dev/null
+curl -c cookiejar.txt "http://$UPSIP/login_pass.html" > /dev/null
+curl -b cookiejar.txt "http://$UPSIP/login_counter.html?stap=1" > /dev/null
+curl -b cookiejar.txt "http://$UPSIP/login_counter.html?stap=2" > /dev/null
 sleep 2  # This seems to occasionally help
-curl -b cookiejar.txt "http://$UPSIP/login_counter.html?stap=2" 1>&2
-curl -b cookiejar.txt "http://$UPSIP/login.cgi?action=LOGIN" 1>&2
+curl -b cookiejar.txt "http://$UPSIP/login_counter.html?stap=2" > /dev/null
+curl -b cookiejar.txt "http://$UPSIP/login.cgi?action=LOGIN" > /dev/null
 # HTTP headers are written to the top of these files, omit "-D -" to suppress
 # curl -b cookiejar.txt "http://$UPSIP/get_eventLog.cgi" > eventLog.txt
 curl -b cookiejar.txt "http://$UPSIP/get_dataRec.cgi" | gawk 'NR==1; NR>1 && $2 { print | "sort" }' | restic backup --stdin --stdin-filename ups-data.txt --hostname cyberpower
 # This is necessary or future auth attempts will be locked out until some timeout
-curl -b cookiejar.txt "http://$UPSIP/logout.html" 1>&2
+curl -b cookiejar.txt "http://$UPSIP/logout.html" > /dev/null 
