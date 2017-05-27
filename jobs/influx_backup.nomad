@@ -21,7 +21,7 @@ job "influx_backup" {
       driver = "raw_exec"
       config {
         command = "/usr/local/bin/envconsul"
-        args = ["-prefix=minio/","-prefix=influxbak/","-once","/usr/local/bin/influx_backup.sh"]
+        args = ["-prefix=minio/","-prefix=dbbackups/influx/","-once","/usr/local/bin/influx_backup.sh"]
       }
 
       logs {

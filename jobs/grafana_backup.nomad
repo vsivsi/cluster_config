@@ -26,7 +26,7 @@ job "grafana_backup" {
       driver = "raw_exec"
       config {
         command = "/usr/local/bin/envconsul"
-        args = ["-prefix=minio/","-prefix=grafanabak/","-once","/usr/local/bin/grafana_backup.sh"]
+        args = ["-prefix=minio/","-prefix=dbbackups/grafana/","-once","/usr/local/bin/grafana_backup.sh"]
       }
 
       logs {
