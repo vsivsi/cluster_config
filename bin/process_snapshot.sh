@@ -7,3 +7,5 @@ echo "Script to run: /usr/local/bin/$(/usr/local/bin/consul kv get ${1%/snapshot
 /usr/local/bin/envconsul -prefix minio/ -prefix ${1%/snapshots/*}/ /usr/local/bin/restic restore -t /tmp/${1#*/snapshots/} ${1#*/snapshots/} >> /usr/local/var/log/hook_processed.log
 
 ls /tmp/${1#*/snapshots/} >> /usr/local/var/log/hook_processed.log
+
+/usr/local/bin/$(/usr/local/bin/consul kv get ${1%/snapshots/*}/script) -i `ls /tmp/${1#*/snapshots/}` -H influx-head.service.consul -d data -o /dev/stdout >> /usr/local/var/log/hook_processed.log
