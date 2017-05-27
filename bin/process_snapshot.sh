@@ -7,7 +7,7 @@ DATASET=${1%/snapshots/*}
 SCRIPT=$(consul kv get $DATASET/script)
 
 CRUISE_ID=$(consul kv get $DATASET/CRUISE_ID)
-MEASUREMENT_ID=$(consul kv get $DATASET/CRUISE_ID)
+MEASUREMENT_ID=$(consul kv get $DATASET/MEASUREMENT_ID)
 
 echo `date -u +"%Y-%m-%dT%H:%M:%SZ"` $1 >> /usr/local/var/log/hook_processed.log
 echo "Restic repo :" $(consul kv get $DATASET/RESTIC_REPOSITORY) >> /usr/local/var/log/hook_processed.log
