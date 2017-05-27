@@ -81,7 +81,7 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "ups/UPSIP"                 = "ups"
     "ups/script"                = "lineprotocol-cyberpower-ups-dataLog"
     "ups/CRUISE_ID"             = "MGL1704"
-    "ups/MEASUREMENT_ID"        = "ups_status"   
+    "ups/MEASUREMENT_ID"        = "ups_status"
   }
 }
 
@@ -144,6 +144,10 @@ resource "nomad_job" "tileserver" {
 
 resource "nomad_job" "uploadserver" {
    jobspec = "${file("uploadserver.nomad")}"
+}
+
+resource "nomad_job" "poll_ups" {
+   jobspec = "${file("poll_ups.nomad")}"
 }
 
 ## Parameterized jobs don't register correctly
