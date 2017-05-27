@@ -70,33 +70,6 @@ resource "consul_key_prefix" "inst_backup_configs" {
   }
 }
 
-resource "consul_key_prefix" "consul_backup_config" {
-  path_prefix = "consulbak/"
-
-  subkeys = {
-    RESTIC_REPOSITORY     = "s3:http://minio.service.consul:9000/dbbackups/consul"
-    RESTIC_PASSWORD       = "${var.RESTIC_PASSWORD}"
-  }
-}
-
-resource "consul_key_prefix" "influx_backup_config" {
-  path_prefix = "influxbak/"
-
-  subkeys = {
-    RESTIC_REPOSITORY     = "s3:http://minio.service.consul:9000/dbbackups/influx"
-    RESTIC_PASSWORD       = "${var.RESTIC_PASSWORD}"
-  }
-}
-
-resource "consul_key_prefix" "grafana_backup_config" {
-  path_prefix = "grafanabak/"
-
-  subkeys = {
-    RESTIC_REPOSITORY     = "s3:http://minio.service.consul:9000/dbbackups/grafana"
-    RESTIC_PASSWORD       = "${var.RESTIC_PASSWORD}"
-  }
-}
-
 resource "consul_key_prefix" "grafana_config" {
   path_prefix = "grafana/"
 
