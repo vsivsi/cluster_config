@@ -17,6 +17,15 @@ provider "consul" {
   datacenter = "dc1"
 }
 
+resource "consul_key_prefix" "valid_cruises" {
+
+   path_prefix = "cruises/"
+   subkeys     = {
+      "KOK1606"="1"
+      "MGL1704"="1"
+   }
+}
+
 resource "consul_key_prefix" "server_setup" {
 
    path_prefix = "server/"
