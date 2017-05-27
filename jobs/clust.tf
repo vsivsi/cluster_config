@@ -76,8 +76,9 @@ resource "consul_key_prefix" "inst_backup_configs" {
   subkeys = {
     "ups/RESTIC_REPOSITORY"     = "s3:http://minio.service.consul:9000/instbackups/ups"
     "ups/RESTIC_PASSWORD"       = "${var.RESTIC_PASSWORD}"
-    "ups/CYBERPOWER_USER"       = "admin"
-    "ups/CYBERPOWER_PASSWORD"   = "${var.ADMIN_PASSWORD}"
+    "ups/CPWUSER"               = "admin"
+    "ups/CPWPASS"               = "${var.ADMIN_PASSWORD}"
+    "ups/UPSIP"                 = "ups"
     "ups/script"                = "lineprotocol-cyberpower-ups-dataLog.js"
   }
 }
