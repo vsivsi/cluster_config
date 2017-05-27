@@ -79,7 +79,7 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "ups/CPWUSER"               = "admin"
     "ups/CPWPASS"               = "${var.ADMIN_PASSWORD}"
     "ups/UPSIP"                 = "ups"
-    "ups/script"                = "lineprotocol-cyberpower-ups-dataLog.js"
+    "ups/script"                = "lineprotocol-cyberpower-ups-dataLog"
   }
 }
 
