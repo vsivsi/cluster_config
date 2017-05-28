@@ -74,6 +74,8 @@ resource "consul_key_prefix" "inst_backup_configs" {
   path_prefix = "instbackups/"
 
   subkeys = {
+
+    ### UPS instrument settings
     "ups/RESTIC_REPOSITORY"     = "s3:http://minio.service.consul:9000/instbackups/ups"
     "ups/RESTIC_PASSWORD"       = "${var.RESTIC_PASSWORD}"
     "ups/CPWUSER"               = "admin"
@@ -82,6 +84,13 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "ups/script"                = "lineprotocol-cyberpower-ups-dataLog"
     "ups/CRUISE_ID"             = "MGL1704"
     "ups/MEASUREMENT_ID"        = "ups_status"
+
+    ### Seaflow instrument settings
+    "seaflow_MGL1704/RESTIC_REPOSITORY"     = "s3:http://minio.service.consul:9000/instbackups/seaflow_MGL1704"
+    "seaflow_MGL1704/RESTIC_PASSWORD"       = "${var.RESTIC_PASSWORD}"
+    "seaflow_MGL1704/script"                = "lineprotocol-seaflow"
+    "seaflow_MGL1704/CRUISE_ID"             = "MGL1704"
+    "seaflow_MGL1704/MEASUREMENT_ID"        = "Seaflow"
   }
 }
 
