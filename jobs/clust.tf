@@ -164,9 +164,9 @@ resource "nomad_job" "poll_ups" {
 #   jobspec = "${file("import_snapshot.nomad")}"
 # }
 
-# resource "nomad_job" "caddy" {
-#    jobspec = "${file("caddy.nomad")}"
-# }
+resource "nomad_job" "caddy" {
+  jobspec = "${file("caddy.nomad")}"
+}
 
 provider "influxdb" {
   url      = "http://mm0:8086/"
