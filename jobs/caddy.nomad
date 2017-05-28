@@ -42,7 +42,7 @@ job "caddy" {
         network {
           mbits = 100
           port "webalt" {
-             static = 2015 
+             static = 9999
           }
         }
       }
@@ -67,13 +67,13 @@ job "caddy" {
       # the online documentation at:
       #
       #     https://www.nomadproject.io/docs/job-specification/template.html
-       
+
       template {
          data          = <<EOF
 
 :{{ env "NOMAD_PORT_webalt" }}
 
-proxy {{ key "server/MINIO_HEAD_PREFIX" }} minio-head.service.consul:9000  {
+proxy {{ key "server/MINIO_HEAD_PREFIX" }} minio.service.consul:9000  {
     header_upstream X-Forwarded-Proto {scheme}
     header_upstream X-Forwarded-Host {host}
     header_upstream Host {host}
@@ -98,5 +98,3 @@ EOF
     }
   }
 }
-
-
