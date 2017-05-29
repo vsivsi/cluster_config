@@ -67,6 +67,8 @@ resource "consul_key_prefix" "db_backup_configs" {
     "influx/RESTIC_PASSWORD"       = "${var.RESTIC_PASSWORD}"
     "grafana/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/dbbackups/grafana"
     "grafana/RESTIC_PASSWORD"      = "${var.RESTIC_PASSWORD}"
+    "minio/RESTIC_REPOSITORY"      = "s3:http://minio.service.consul:9000/dbbackups/minio"
+    "minio/RESTIC_PASSWORD"        = "${var.RESTIC_PASSWORD}"
   }
 }
 
