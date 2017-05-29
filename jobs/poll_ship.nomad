@@ -21,7 +21,7 @@ job "poll_ship" {
       driver = "raw_exec"
       config {
         command = "/usr/local/bin/envconsul"
-        args = ["-prefix=minio/","-prefix=instbackups/shipdata/","-once","/usr/local/bin/fetch_ship_data.sh"]
+        args = ["-prefix=minio/","-prefix=instbackups/shipdata-MGL1704/","-once","/usr/local/bin/fetch_ship_data.sh"]
       }
 
       logs {
