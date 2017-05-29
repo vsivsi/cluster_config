@@ -5,7 +5,7 @@ job "poll_ship" {
   type = "batch"
 
   periodic {
-    cron             = "*/10 * * * * *"
+    cron             = "*/3 * * * * *"
     prohibit_overlap = true
   }
 
