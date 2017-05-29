@@ -7,4 +7,4 @@ export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 restic init
 
-restic backup --hostname $CRUISE_ID /Volumes/MGL1704/raw/serial/
+restic backup --hostname $CRUISE_ID /Volumes/MGL1704/raw/serial/MGL-cnav.*
