@@ -147,6 +147,10 @@ resource "nomad_job" "grafana_backup" {
   jobspec = "${file("grafana_backup.nomad")}"
 }
 
+resource "nomad_job" "minio_backup" {
+  jobspec = "${file("minio_backup.nomad")}"
+}
+
 resource "nomad_job" "influxdb-head" {
    jobspec = "${file("influxdb-head.nomad")}"
 }
