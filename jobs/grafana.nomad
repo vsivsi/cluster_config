@@ -78,6 +78,11 @@ domain = localhost
 admin_password = {{ key "grafana/ADMIN_PASSWORD" }}
 disable_gravatar = true
 
+[auth.anonymous]
+enabled = true
+org_name = Gradients
+org_role = Editor
+
 [analytics]
 reporting_enabled = false
 check_for_updates = false
