@@ -91,6 +91,12 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "seaflow_MGL1704/script"                = "lineprotocol-seaflow"
     "seaflow_MGL1704/CRUISE_ID"             = "MGL1704"
     "seaflow_MGL1704/MEASUREMENT_ID"        = "Seaflow"
+
+    ### SHip data feeds
+    "shipdata_MGL1704/RESTIC_REPOSITORY"     = "s3:http://minio.service.consul:9000/instbackups/shipdata_MGL1704"
+    "shipdata_MGL1704/RESTIC_PASSWORD"       = "${var.RESTIC_PASSWORD}"
+    "shipdata_MGL1704/script"                = "ingest_ship_data.sh"
+    "shipdata_MGL1704/CRUISE_ID"             = "MGL1704"
   }
 }
 
