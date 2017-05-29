@@ -24,6 +24,7 @@ then
    $(consul kv get $DATASET/script) -i /tmp/$SNAPID/* -H influx-head.service.consul -d data -c $CRUISE_ID -m $MEASUREMENT_ID
    # $(consul kv get $DATASET/script) -i /tmp/$SNAPID/* -o /dev/stdout -c $CRUISE_ID -m $MEASUREMENT_ID >> /usr/local/var/log/hook_processed.log
 elif [ $CRUISE_ID ]
+then
    echo "CRUISE_ID: $CRUISE_ID MEASUREMENT_IDs handled in ingest script"
    $(consul kv get $DATASET/script) /tmp/$SNAPID $CRUISE_ID
 else
