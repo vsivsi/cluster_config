@@ -14,7 +14,7 @@ echo "Restic repo :" $(consul kv get $DATASET/RESTIC_REPOSITORY)
 echo "Script to run: $(consul kv get $DATASET/script)"
 echo "DATASET: $DATASET  SNAPID: $SNAPID"
 
-envconsul -prefix minio/ -prefix $DATASET/ restic restore -t /tmp/$SNAPID $SNAPID
+envconsul -prefix minio/ -prefix $DATASET/ restic6 restore -t /tmp/$SNAPID $SNAPID
 
 ls /tmp/$SNAPID
 
