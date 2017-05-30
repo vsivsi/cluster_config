@@ -79,9 +79,11 @@ admin_password = {{ key "grafana/ADMIN_PASSWORD" }}
 disable_gravatar = true
 
 [auth.anonymous]
-enabled = true
-org_name = Gradients
-org_role = Editor
+enabled = false
+
+[users]
+auto_assign_org = Gradients
+auto_assign_org_role = Read Only Editor
 
 [analytics]
 reporting_enabled = false
