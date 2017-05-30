@@ -10,7 +10,7 @@ job "grafana_backup" {
   }
 
   periodic {
-    cron             = "*/5 * * * * *"
+    cron             = "*/15 * * * * *"
     prohibit_overlap = true
   }
 
