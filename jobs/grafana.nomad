@@ -83,7 +83,7 @@ enabled = false
 
 [users]
 auto_assign_org = Gradients
-auto_assign_org_role = Read Only Editor
+auto_assign_org_role = Editor
 
 [analytics]
 reporting_enabled = false
