@@ -26,7 +26,7 @@ job "grafana" {
       config {
         command = "/usr/local/bin/grafana-server"
         args = [
-         "--config", "./grafana.ini",
+         "--config", "grafana.ini",
          "--homepath", "/usr/local/opt/grafana/share/grafana",
          "cfg:default.paths.logs=/usr/local/var/log/grafana",
          "cfg:default.paths.data=/usr/local/var/lib/grafana",
@@ -63,7 +63,7 @@ job "grafana" {
       }
 
       template {
-         destination   = "grafana.ini"
+         destination   = "/usr/local/opt/grafana/share/grafana/conf/grafana.ini"
          change_mode   = "signal"
          change_signal = "SIGUSR1"
          data          = <<EOF
