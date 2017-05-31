@@ -5,6 +5,6 @@
 
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
-restic init
+restic6 init -o s3.layout=default
 
-restic backup --hostname $CRUISE_ID /Volumes/MGL1704/raw/serial/MGL-cnav.* /Volumes/MGL1704/raw/serial/MGL-tsgraw.*
+restic6 backup --hostname $CRUISE_ID /Volumes/MGL1704/raw/serial/MGL-cnav.* /Volumes/MGL1704/raw/serial/MGL-tsgraw.*
