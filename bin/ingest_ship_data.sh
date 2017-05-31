@@ -13,4 +13,4 @@ lineprotocol-cnav_33103-GPGGA -c $2 -m cnav_gps_position -i <(cat $1/MGL-cnav.* 
 
 lineprotocol-tsgraw_33721 -c $2 -m temp_sal_ss -i <(cat $1/MGL-tsgraw.* | gawk 'NR%3==1') -H influx-head.service.consul -d data
 
-lineprotocol-par_32002 -c $2 -m par -i <(cat $1/MGL-par.* | gawk 'NR%30==1') -H influx-head.service.consul -d data
+lineprotocol-par_32002 -c $2 -m surface_par -i <(cat $1/MGL-par.* | gawk 'NR%30==1') -H influx-head.service.consul -d data
