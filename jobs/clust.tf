@@ -94,11 +94,24 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "seaflow_MGL1704/CRUISE_ID"             = "MGL1704"
     "seaflow_MGL1704/MEASUREMENT_ID"        = "Seaflow"
 
-    ### SHip data feeds
+    ### Ship data feeds
     "shipdata_MGL1704/RESTIC_REPOSITORY"     = "s3:http://minio.service.consul:9000/instbackups/shipdata_MGL1704"
     "shipdata_MGL1704/RESTIC_PASSWORD"       = "${var.RESTIC_PASSWORD}"
     "shipdata_MGL1704/script"                = "ingest_ship_data.sh"
     "shipdata_MGL1704/CRUISE_ID"             = "MGL1704"
+
+    ### LISST
+    "LISST_MGL1704/RESTIC_REPOSITORY"        = "s3:http://minio.service.consul:9000/instbackups/LISST_MGL1704"
+    "LISST_MGL1704/RESTIC_PASSWORD"          = "${var.RESTIC_PASSWORD}"
+    "LISST_MGL1704/script"                   = "lineprotocol-standard-format"
+    "LISST_MGL1704/CRUISE_ID"                = "MGL1704"
+
+    ### PO4
+    "PO4_MGL1704/RESTIC_REPOSITORY"          = "s3:http://minio.service.consul:9000/instbackups/PO4_MGL1704"
+    "PO4_MGL1704/RESTIC_PASSWORD"            = "${var.RESTIC_PASSWORD}"
+    "PO4_MGL1704/script"                     = "lineprotocol-standard-format"
+    "PO4_MGL1704/CRUISE_ID"                  = "MGL1704"
+
   }
 }
 
