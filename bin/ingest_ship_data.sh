@@ -15,4 +15,4 @@ lineprotocol-tsgraw_33721 -c $2 -m temp_sal_ss -i <(cat $1/MGL-tsgraw.* | gawk '
 
 lineprotocol-par_32002 -c $2 -m surface_par -i <(cat $1/MGL-par.* | gawk 'NR%30==1') -H influx-head.service.consul -d data
 
-lineprotocol-ecotriplet -c $2 -m ecotriplet -i <(cat $1/MGL-UH-ecotriplet.* | gawk 'NR%30==1') -H influx-head.service.consul -d data
+lineprotocol-ecotriplet -c $2 -m ecotriplet_raw_feed -i <(cat $1/MGL-UH-ecotriplet.* | gawk 'NR%30==1') -H influx-head.service.consul -d data
