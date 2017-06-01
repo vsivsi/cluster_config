@@ -105,13 +105,14 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "LISST_MGL1704/RESTIC_PASSWORD"          = "${var.RESTIC_PASSWORD}"
     "LISST_MGL1704/script"                   = "lineprotocol-standard-format"
     "LISST_MGL1704/CRUISE_ID"                = "MGL1704"
+    "LISST_MGL1704/MEASUREMENT_ID"           = "LISST"
 
     ### PO4
     "PO4_MGL1704/RESTIC_REPOSITORY"          = "s3:http://minio.service.consul:9000/instbackups/PO4_MGL1704"
     "PO4_MGL1704/RESTIC_PASSWORD"            = "${var.RESTIC_PASSWORD}"
     "PO4_MGL1704/script"                     = "lineprotocol-standard-format"
     "PO4_MGL1704/CRUISE_ID"                  = "MGL1704"
-
+    "PO4_MGL1704/MEASUREMENT_ID"             = "PO4"
   }
 }
 
