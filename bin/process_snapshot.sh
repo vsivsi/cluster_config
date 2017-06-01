@@ -29,7 +29,7 @@ then
    $(consul kv get $DATASET/script) /tmp/$SNAPID $CRUISE_ID
 else
    echo "CRUISE_ID and MEASUREMENT_ID are in datafile"
-   $(consul kv get $DATASET/script) -i /tmp/$SNAPID/*.tsv -H influx-head.service.consul -d data
+   $(consul kv get $DATASET/script) -i /tmp/$SNAPID/* -H influx-head.service.consul -d data
    # $(consul kv get $DATASET/script) -i /tmp/$SNAPID/*.tsv -o /dev/stdout >> /usr/local/var/log/hook_processed.log
 fi
 
