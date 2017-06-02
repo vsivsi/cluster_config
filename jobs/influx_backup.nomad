@@ -5,7 +5,7 @@ job "influx_backup" {
   type = "batch"
 
   periodic {
-    cron             = "@hourly"
+    cron             = "10,40 * * * * *"
     prohibit_overlap = true
   }
 
