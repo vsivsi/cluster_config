@@ -9,6 +9,11 @@ job "poll_ups" {
     prohibit_overlap = true
   }
 
+  constraint {
+    attribute = "${node.class}"
+    value     = "worker"
+  }
+
   group "instance" {
 
     restart {

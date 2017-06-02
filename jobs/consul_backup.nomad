@@ -9,6 +9,11 @@ job "consul_backup" {
     prohibit_overlap = true
   }
 
+  constraint {
+    attribute = "${node.class}"
+    value     = "worker"
+  }
+
   group "instance" {
 
     restart {

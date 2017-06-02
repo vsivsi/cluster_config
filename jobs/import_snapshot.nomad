@@ -10,6 +10,11 @@ job "import_snapshot" {
     meta_optional = []
   }
 
+  constraint {
+    attribute = "${node.class}"
+    value     = "worker"
+  }
+
   group "instance" {
 
     restart {
