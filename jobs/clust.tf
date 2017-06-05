@@ -115,6 +115,11 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "PO4_MGL1704/RESTIC_PASSWORD"            = "${var.RESTIC_PASSWORD}"
     "PO4_MGL1704/script"                     = "lineprotocol-standard-format"
 
+    ### ACS
+    "ACS_MGL1704/RESTIC_REPOSITORY"          = "s3:http://minio.service.consul:9000/instbackups/ACS_MGL1704"
+    "ACS_MGL1704/RESTIC_PASSWORD"            = "${var.RESTIC_PASSWORD}"
+    "ACS_MGL1704/script"                     = "lineprotocol-standard-format"
+
   }
 }
 
