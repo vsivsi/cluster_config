@@ -5,7 +5,7 @@
 /usr/local/bin/influxd backup -host influx-head.service.consul:8088 -database viz /tmp/viz
 /usr/local/bin/restic6 backup --hostname influx /tmp/viz
 
-until rsync -vv --checksum --stats --progress -auz --compress-level=9 --partial-dir=.rsync-partial /tmp/viz ubuntu@gradientscruise.com:~/influxbackups/
+until rsync -vv --checksum --stats --progress -auz --compress-level=9 --partial-dir=.rsync-partial --delete /tmp/viz ubuntu@gradientscruise.com:~/influxbackups/
 do
   echo "Retrying rsync..."
   sleep 15
