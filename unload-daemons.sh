@@ -1,6 +1,8 @@
 ## This will unload consul and nomad
 
-kill-daemons.sh
+./kill-daemons.sh
+
+sleep 5
 
 sudo launchctl bootout system/homebrew.mxcl.nomad
 sudo launchctl bootout system/homebrew.mxcl.consul
