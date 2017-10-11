@@ -1,8 +1,9 @@
 ## This will unload consul and nomad
 
-sudo launchctl unload /Library/LaunchDaemons/com.hashicorp.nomad.plist
-sleep 3
-sudo launchctl unload /Library/LaunchDaemons/com.hashicorp.consul.plist
+kill-daemons.sh
+
+sudo launchctl bootout system/homebrew.mxcl.nomad
+sudo launchctl bootout system/homebrew.mxcl.consul
 
 ## This will setup consul to reconnect on startup
 # Disables this for now because it didn't work anyway...
