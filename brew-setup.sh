@@ -61,7 +61,7 @@ brew install consul-backinator
 # Linux
 if ! [ -e hashi-ui-darwin-amd64 ]
 then
-curl -L -O https://github.com/jippi/hashi-ui/releases/download/v0.13.5/hashi-ui-darwin-amd64
+curl -L -O https://github.com/jippi/hashi-ui/releases/download/v0.21.2/hashi-ui-darwin-amd64
 cp hashi-ui-darwin-amd64 /usr/local/bin/hashi-ui
 chmod 755 /usr/local/bin/hashi-ui
 fi
