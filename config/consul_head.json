@@ -2,6 +2,7 @@
    "server": true,
    "data_dir": "/usr/local/var/consul",
    "bind_addr": "192.168.100.38",
+   "client_addr": "0.0.0.0",
    "bootstrap_expect": 1,
    "ui": true,
    "disable_host_node_id": true,
