@@ -58,6 +58,12 @@ brew install caddy
 # Linux: ???
 brew install consul-backinator
 
+# Linux: ???
+brew tap restic/restic
+brew install restic
+# Necessary because restic used to be a custom build
+brew link --overwrite restic
+
 # Linux
 if ! [ -e hashi-ui-darwin-amd64 ]
 then
