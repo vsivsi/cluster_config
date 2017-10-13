@@ -1,3 +1,5 @@
+# Run this with sudo -E <script>
+
 case $HOSTNAME in
 (mm0)
   NODETYPE="head";;
@@ -44,6 +46,7 @@ sudo launchctl bootstrap system /Library/LaunchDaemons/com.hashicorp.nomad.plist
 
 if [[ $NODETYPE == "head" ]]
 then
+  # echo "Here it is: " $TF_VAR_EXTERNAL_HOSTNAME
   if [[ $TF_VAR_EXTERNAL_HOSTNAME ]]
   then
 
