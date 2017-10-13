@@ -20,8 +20,10 @@
       <string>192.168.100.38</string>
       <string>-cpu</string>
       <string>50%</string>
+<!--
       <string>-ca</string>
       <string>https://acme-staging.api.letsencrypt.org/directory</string>
+-->
       <string>-email</string>
       <string>chrisbee@uw.edu</string>
       <string>-agree</string>
@@ -42,8 +44,8 @@
     <key>StandardOutPath</key>
     <string>/usr/local/var/log/caddy.stdout</string>
     <key>UserName</key>
-    <string>admin</string>
+    <string>root</string>
     <key>GroupName</key>
-    <string>admin</string>
+    <string>wheel</string>
   </dict>
 </plist>

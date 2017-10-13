@@ -1,5 +1,5 @@
 {$EXTERNAL_HOSTNAME}
 
-proxy / uploadserver.consul:8080
+proxy / mm0:8080
 
-proxy /grafana grafana.consul:3000
+proxy /grafana mm0:3000
