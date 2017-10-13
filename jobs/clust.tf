@@ -11,6 +11,7 @@ variable "MINIO_HEAD_ACCESS_KEY" {}
 variable "MINIO_HEAD_SECRET_KEY" {}
 variable "RESTIC_PASSWORD" {}
 variable "ADMIN_PASSWORD" {}
+variable "EXTERNAL_HOSTNAME" {}
 
 provider "consul" {
   address    = "mm0:8500"
@@ -196,14 +197,14 @@ resource "nomad_job" "poll_ship" {
    jobspec = "${file("poll_ship.nomad")}"
 }
 
-## Parameterized jobs don't register correctly
-# resource "nomad_job" "import_snapshot" {
-#   jobspec = "${file("import_snapshot.nomad")}"
-# }
-
-resource "nomad_job" "caddy" {
-  jobspec = "${file("caddy.nomad")}"
+resource "nomad_job" "import_snapshot" {
+   jobspec = "${file("import_snapshot.nomad")}"
 }
+
+## Migrated to launchd for ports 80 and 443
+# resource "nomad_job" "caddy" {
+#   jobspec = "${file("caddy.nomad")}"
+# }
 
 provider "influxdb" {
   url      = "http://mm0:8086/"
