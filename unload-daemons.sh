@@ -4,6 +4,7 @@
 
 sleep 5
 
+sudo launchctl bootout system/homebrew.mxcl.caddy
 sudo launchctl bootout system/homebrew.mxcl.nomad
 sudo launchctl bootout system/homebrew.mxcl.consul
 

@@ -1,4 +1,6 @@
-## This will kill running consul and nomad services
+## This will kill running cluster services
+
+sudo launchctl kill SIGINT system/homebrew.mxcl.caddy
 
 sudo launchctl kill SIGINT system/homebrew.mxcl.nomad
 sleep 3
