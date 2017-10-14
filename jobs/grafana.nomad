@@ -70,7 +70,7 @@ job "grafana" {
 
 [server]
 # Protocol (http, https, socket)
-protocol = https
+protocol = http
 # This will need to change on the ship
 domain = {{ key "caddy/EXTERNAL_HOSTNAME" }}
 # Note sure if this is needed yet
