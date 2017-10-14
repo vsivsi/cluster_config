@@ -222,9 +222,12 @@ resource "nomad_job" "grafana" {
    jobspec = "${file("grafana.nomad")}"
 }
 
-resource "nomad_job" "tileserver" {
-   jobspec = "${file("tileserver.nomad")}"
-}
+##
+## Don't run this job when not on ship
+##
+# resource "nomad_job" "tileserver" {
+#    jobspec = "${file("tileserver.nomad")}"
+# }
 
 resource "nomad_job" "uploadserver" {
    jobspec = "${file("uploadserver.nomad")}"
