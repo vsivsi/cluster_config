@@ -234,9 +234,12 @@ resource "nomad_job" "poll_ups" {
    jobspec = "${file("poll_ups.nomad")}"
 }
 
-resource "nomad_job" "poll_ship" {
-   jobspec = "${file("poll_ship.nomad")}"
-}
+##
+## Don't run this job when not on ship
+##
+# resource "nomad_job" "poll_ship" {
+#   jobspec = "${file("poll_ship.nomad")}"
+# }
 
 resource "nomad_job" "import_snapshot" {
    jobspec = "${file("import_snapshot.nomad")}"
