@@ -72,6 +72,7 @@ job "grafana" {
 # Protocol (http, https, socket)
 protocol = http
 # This will need to change on the ship
+# domain = localhost
 domain = {{ key "caddy/EXTERNAL_HOSTNAME" }}
 # Note sure if this is needed yet
 root_url = %(protocol)s://%(domain)s:/grafana

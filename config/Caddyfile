@@ -1,5 +1,13 @@
 {$EXTERNAL_HOSTNAME}
 
-proxy / mm0:8080
+proxy / mm0:8080 {
+#   without /uploader
+}
 
-proxy /grafana mm0:3000
+proxy /grafana mm0:3000 {
+  without /grafana
+}
+
+proxy /services mm0:8000 {
+#  without /tiles
+}
