@@ -71,8 +71,10 @@ brew untap restic/restic
 
 git clone https://github.com/restic/restic.git
 cd restic
+git checkout v0.7.3
 go run build.go --enable-cgo
 cp restic /usr/local/bin/restic
+cd ..
 
 # Linux
 if ! [ -e hashi-ui-darwin-amd64 ]

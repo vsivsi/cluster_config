@@ -6,4 +6,5 @@ hashi-ui-darwin-amd64
 traefik_darwin-amd64
 webhook-darwin-amd64.tar.gz
 webhook-darwin-amd64/webhook
+restic
 .DS_Store
