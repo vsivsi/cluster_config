@@ -122,28 +122,28 @@ resource "consul_key_prefix" "inst_backup_configs" {
     "ACS_MGL1704/script"                     = "lineprotocol-standard-format"
 
     ### Temp salinity condtivity
-    "TEMPSALSS_KOK1606/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/instbackups/tempsalss_KOK1606"
+    "TEMPSALSS_KOK1606/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/instbackups/TEMPSALSS_KOK1606"
     "TEMPSALSS_KOK1606/RESTIC_PASSWORD"      = "${var.RESTIC_PASSWORD}"
     "TEMPSALSS_KOK1606/script"               = "lineprotocol-thsl_wfix"
     "TEMPSALSS_KOK1606/CRUISE_ID"            = "KOK1606"
     "TEMPSALSS_KOK1606/MEASUREMENT_ID"       = "temp_sal_ss"
 
     ### GPS location
-    "GPS_KOK1606/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/instbackups/gps_KOK1606"
+    "GPS_KOK1606/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/instbackups/GPS_KOK1606"
     "GPS_KOK1606/RESTIC_PASSWORD"      = "${var.RESTIC_PASSWORD}"
     "GPS_KOK1606/script"               = "lineprotocol-thsl_wfix-geo"
     "GPS_KOK1606/CRUISE_ID"            = "KOK1606"
     "GPS_KOK1606/MEASUREMENT_ID"       = "cnav_gps_position"
 
     ### Speed
-    "SPEED_KOK1606/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/instbackups/speed_KOK1606"
+    "SPEED_KOK1606/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/instbackups/SPEED_KOK1606"
     "SPEED_KOK1606/RESTIC_PASSWORD"      = "${var.RESTIC_PASSWORD}"
     "SPEED_KOK1606/script"               = "lineprotocol-thsl_wfix-speed"
     "SPEED_KOK1606/CRUISE_ID"            = "KOK1606"
     "SPEED_KOK1606/MEASUREMENT_ID"       = "cnav_speed_course"
 
     ### Par
-    "PAR_KOK1606/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/instbackups/par_KOK1606"
+    "PAR_KOK1606/RESTIC_REPOSITORY"    = "s3:http://minio.service.consul:9000/instbackups/PAR_KOK1606"
     "PAR_KOK1606/RESTIC_PASSWORD"      = "${var.RESTIC_PASSWORD}"
     "PAR_KOK1606/script"               = "lineprotocol-par_KOK1606"
     "PAR_KOK1606/CRUISE_ID"            = "KOK1606"
