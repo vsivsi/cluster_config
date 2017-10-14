@@ -119,4 +119,4 @@ cp -r bin/* /usr/local/bin
 
 # Install packages from github masters:
 
-./install_custom.sh
+./install-custom.sh
