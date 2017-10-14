@@ -12,6 +12,8 @@ client {
   network_speed = 1000
   node_class    = "dev"
   no_host_uuid  = true
+  gc_interval   = "15m"
+  gc_max_allocs = "5000"
   options {
     "driver.raw_exec.enable" = "1"
   }
