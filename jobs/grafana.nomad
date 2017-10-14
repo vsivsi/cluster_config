@@ -69,10 +69,12 @@ job "grafana" {
          data          = <<EOF
 
 [server]
+# Protocol (http, https, socket)
+protocol = https
 # This will need to change on the ship
-domain = localhost
+domain = {{ key "caddy/EXTERNAL_HOSTNAME" }}
 # Note sure if this is needed yet
-; root_url = %(protocol)s://%(domain)s:/grafana
+root_url = %(protocol)s://%(domain)s:/grafana
 
 [security]
 admin_password = {{ key "grafana/ADMIN_PASSWORD" }}

@@ -141,6 +141,13 @@ resource "consul_key_prefix" "uploads_backup_config" {
   }
 }
 
+resource "consul_key_prefix" "caddy_server" {
+  path_prefix = "caddy/"
+  subkeys = {
+    EXTERNAL_HOSTNAME = "${var.EXTERNAL_HOSTNAME}"
+  }
+}
+
 provider "nomad" {
   address = "http://mm0:4646"
 }
