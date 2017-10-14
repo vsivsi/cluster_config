@@ -58,11 +58,21 @@ brew install caddy
 # Linux: ???
 brew install consul-backinator
 
+# Install golang for restic custom build
+
+brew install go
+
 # Linux: ???
-brew tap restic/restic
-brew install restic
-# Necessary because restic used to be a custom build
-brew link --overwrite restic
+# Clean-up from failed experiment to install restic using brew,
+# which doesn't work for us because we require a custom CGO enabled
+# build of restic for consul service DNS resolution to work correctly
+brew uninstall restic
+brew untap restic/restic
+
+git clone https://github.com/restic/restic.git
+cd restic
+go run build.go --enable-cgo
+cp restic /usr/local/bin/restic
 
 # Linux
 if ! [ -e hashi-ui-darwin-amd64 ]
