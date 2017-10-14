@@ -255,7 +255,6 @@ resource "nomad_job" "import_snapshot" {
 
 provider "influxdb" {
   url        = "http://mm0:8086/"
-  depends_on = "influxdb-head"
 }
 
 resource "influxdb_database" "data" {
