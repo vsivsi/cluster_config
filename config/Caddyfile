@@ -6,6 +6,7 @@ proxy / mm0:8080 {
 
 proxy /grafana mm0:3000 {
   without /grafana
+  header_upstream -Authorization
 }
 
 basicauth / workshop {$UPLOAD_PASSWORD}
