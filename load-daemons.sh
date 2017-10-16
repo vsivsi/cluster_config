@@ -58,6 +58,7 @@ then
 
     sudo launchctl setenv EXTERNAL_HOSTNAME ${TF_VAR_EXTERNAL_HOSTNAME}
     sudo echo setenv EXTERNAL_HOSTNAME ${TF_VAR_EXTERNAL_HOSTNAME} > /etc/launchd.conf
+    sudo echo setenv UPLOAD_PASSWORD ${TF_VAR_UPLOAD_PASSWORD} >> /etc/launchd.conf
     sudo cp config/caddy.plist /Library/LaunchDaemons/com.mholt.caddy.plist
     sudo launchctl bootstrap system /Library/LaunchDaemons/com.mholt.caddy.plist
   else

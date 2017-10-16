@@ -8,6 +8,4 @@ proxy /grafana mm0:3000 {
   without /grafana
 }
 
-proxy /services mm0:8000 {
-#  without /tiles
-}
+basicauth / workshop {$UPLOAD_PASSWORD}
