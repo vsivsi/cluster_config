@@ -19,6 +19,7 @@ git pull
 npm install
 zip -r ../data_uploader.zip *
 cd ..
+mc cp data_uploader.zip minio/assets/data_uploader.zip
 
 # Install grafana plugins
 
