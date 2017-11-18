@@ -7,7 +7,7 @@ proxy /grafana mm0:3000 {
   header_upstream -Authorization
 }
 
-basicauth workshop {$UPLOAD_PASSWORD} {
+basicauth {$UPLOAD_USER} {$UPLOAD_PASSWORD} {
   realm "Uploader"
   /upload
 }

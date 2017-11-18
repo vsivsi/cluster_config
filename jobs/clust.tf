@@ -163,6 +163,9 @@ resource "consul_key_prefix" "grafana_config" {
 
   subkeys = {
     ADMIN_PASSWORD = "${var.ADMIN_PASSWORD}"
+    SMTP_HOST = "${var.SMTP_HOST}"
+    SMTP_USER = "${var.SMTP_USER}"
+    SMTP_PASSWORD = "${var.SMTP_PASSWORD}"
   }
 }
 
