@@ -12,6 +12,9 @@ variable "MINIO_HEAD_SECRET_KEY" {}
 variable "RESTIC_PASSWORD" {}
 variable "ADMIN_PASSWORD" {}
 variable "EXTERNAL_HOSTNAME" {}
+variable "SMTP_HOST" {}
+variable "SMTP_USER" {}
+variable "SMTP_PASSWORD" {}
 
 provider "consul" {
   address    = "mm0:8500"
