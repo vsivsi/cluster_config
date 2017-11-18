@@ -1,12 +1,13 @@
 {$EXTERNAL_HOSTNAME}
 
-proxy / mm0:8080 {
-#   without /uploader
-}
+proxy / mm0:8080
 
 proxy /grafana mm0:3000 {
   without /grafana
   header_upstream -Authorization
 }
 
-basicauth / workshop {$UPLOAD_PASSWORD}
+basicauth workshop {$UPLOAD_PASSWORD} {
+  realm "Uploader"
+  /upload
+}

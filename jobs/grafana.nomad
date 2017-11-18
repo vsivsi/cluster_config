@@ -95,6 +95,12 @@ check_for_updates = false
 [alerting]
 enabled = false
 
+[smtp]
+enabled = true
+host = {{ key "grafana/SMTP_HOST" }}
+user = {{ key "grafana/SMTP_USER" }}
+password = {{ key "grafana/SMTP_PASSWORD" }}
+
 EOF
       }
     }
